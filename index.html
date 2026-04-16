@@ -291,6 +291,53 @@ tbody tr:hover .cell-name, tbody tr:hover .cell-email { background: #f5f0fe; }
 /* ── Empty state ── */
 .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 24px; gap: 12px; color: var(--ink3); font-size: 13px; text-align: center; }
 .empty-state .big { font-size: 32px; }
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  :root {
+    --slot-w: 52px;
+    --name-w: 100px;
+    --row-h: 44px;
+    --head-h1: 32px;
+    --head-h2: 24px;
+  }
+
+  /* Hide email column entirely */
+  .col-email, .th-email-head, .th-slot-email-empty, .cell-email { display: none !important; }
+
+  /* Name sticky: no longer needs email offset */
+  .col-email { left: 0 !important; }
+
+  /* Tighten topbar */
+  .topbar { padding: 0 12px; height: 48px; gap: 8px; }
+  .topbar-title { font-size: 14px; }
+  .btn { padding: 6px 10px; font-size: 11px; }
+  .btn-ghost { display: none; }
+
+  /* Rangebar stacks */
+  .rangebar { padding: 8px 12px; gap: 8px; flex-direction: column; align-items: flex-start; }
+  .range-input { font-size: 11px; padding: 4px 8px; }
+  .legend { display: none; }
+
+  /* Cells */
+  .slot-label { font-size: 8px; }
+  .slot-icon { font-size: 11px; }
+  .slot-inner { min-height: 34px; }
+  .cell-name { padding: 0 8px; }
+  .name-text { font-size: 12px; }
+  .row-actions { gap: 2px; }
+  .row-act-btn { font-size: 9px; padding: 1px 3px; }
+  .th-day { font-size: 8px; padding: 0 2px; }
+  .th-slot { font-size: 8px; }
+
+  /* Bulk bar */
+  .bulk-bar { width: 90vw; flex-wrap: wrap; justify-content: center; padding: 10px; gap: 6px; bottom: 12px; }
+  .bulk-count { border-right: none; padding-right: 0; width: 100%; text-align: center; }
+  .bulk-sep { display: none; }
+
+  /* Gate */
+  .gate-box { width: 90vw; padding: 28px 20px; }
+}
 </style>
 </head>
 <body>
